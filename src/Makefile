@@ -7,5 +7,6 @@ build:
 	$(CC) $(CFLAGS) $(CSRC) -c
 	mv *.o bin
 	nasm -felf32 lib/unreal_int.asm -o bin/unreal_int.o
-	$(CC) -T linker.ld bin/*.o -o bin/game.bin -nodefaultlibs -nostartfiles -no-pie -lgcc
+	$(CC) -T linker.ld bin/*.o -o bin/game.bin -nodefaultlibs -nostartfiles -no-pie 
+#-lgcc
 	nasm -fbin boot/boot.asm -o ../game
